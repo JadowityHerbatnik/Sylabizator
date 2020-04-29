@@ -4,9 +4,9 @@ import Sylabizator
 
 class App:
 
-    def __init__(self, mastter):
-        mastter.title("Sylabizator")
-        frame = Frame(mastter)
+    def __init__(self, master):
+        master.title("Sylabizator")
+        frame = Frame(master)
         frame.pack(expand=TRUE, fill=BOTH)
         self.field = Text(frame, height=10, wrap=WORD, font="arial")
         self.field.pack(expand=TRUE, side=TOP, fill=BOTH)

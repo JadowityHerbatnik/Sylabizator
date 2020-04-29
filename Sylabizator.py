@@ -6,7 +6,6 @@ zrosty = ['cz', 'sz', 'dz', 'dż', 'dź', 'rz', 'ch', 'si', 'ci', 'ni', 'zi', 'b
 zmiekczenia = ['si', 'ci', 'ni', 'zi', 'bi', 'fi', 'ri', 'gi', 'di', 'wi', 'hi', 'ki', 'mi', 'pi', 'vi', 'li']
 zmiekczenie3 = ['dzi', 'chi']
 wymowasp = ['au', 'eu']
-# przedrostki = ['prze', 'przed', 'przy', 'roz', 'pod', 'po', 'do', 'od', 'nad', 'za']
 bezdzw = ['k', 'p', 't', 'f', 's', 'c', 'ś', 'ć', 'sz', 'cz', 'ch']
 
 
@@ -15,7 +14,6 @@ def samogloski(gloski):  # indeksy na których znajduja sie samogłoski
     for a in range(len(gloski)):
         if gloski[a].lower() in samo:
             indeksy.append(a)
-    # print("indeksy", indeksy)
     return indeksy
 
 
@@ -28,7 +26,6 @@ def fonet(gloski):  # jezeli samogloska jest wymawiana jako spolgloska, zwroc in
             string += gloski[b + 1]
             if a == string.lower():
                 innawymowa.append(b)
-    # print("innawymowa", innawymowa)
     return innawymowa
 
 
@@ -66,7 +63,6 @@ def gloski(slowo): # stworzenie listy składającej się z głosek wymawianych w
         else:
             gloski.append(slowo[a])
             a += 1
-    # print("gloski", gloski)
     return gloski
 
 
@@ -150,8 +146,7 @@ def zdania(z):  # zwraca liste zawierajaca poczatkowe i koncowe indeksy wszystki
             a += 1
     for b in range(len(indslow)):
         indslow[b] -= 1
-    # print(indslow)
-    # indreszty to indksy początków i końców wszystkich ciągów znaków niebędących słowami
+    # indreszty to indeksy początków i końców wszystkich ciągów znaków niebędących słowami
     for a in range(1, len(indslow) - 2, 2):
         indreszty.append(indslow[a] + 1)
         indreszty.append(indslow[a + 1])
@@ -171,7 +166,6 @@ def zdania(z):  # zwraca liste zawierajaca poczatkowe i koncowe indeksy wszystki
         return "brak słów..."
         print("brak słow :C")
         pass
-    # print("reszta", indreszty)
 
     return indslow, indreszty
 
@@ -181,7 +175,6 @@ def wywolaj(n, p, zd):
     listagotowa = []
     for x in range(0, len(n) - 1, 2):
         listagotowa.append(sylabizator(zd[n[x]:n[x + 1] + 1]))
-    # print("listagotowa", listagotowa)
     for a in range(0, len(p), 2):
         druk += zd[p[a]:p[a + 1]]
         try:
